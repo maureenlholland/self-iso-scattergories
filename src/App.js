@@ -1,4 +1,10 @@
 import React from "react";
+import Intro from "./components/Intro";
+import AddPlayers from "./components/AddPlayers";
+import SetTimer from "./components/SetTimer";
+import RollDie from "./components/RollDie";
+import PlayRound from "./components/PlayRound";
+import Leaderboard from "./components/Leaderboard";
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,39 +32,10 @@ export default function App() {
             <AddPlayers />
           </Route>
           <Route path="/">
-            <Home />
+            <Intro />
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return (
-    <>
-      <h2>Welcome to self-iso scattergories</h2>
-      <p>Instructions coming soon...</p>
-    </>
-  );
-}
-
-function AddPlayers() {
-  return <h2>Add players</h2>;
-}
-
-function SetTimer() {
-  return <h2>Set Timer</h2>;
-}
-
-function RollDie() {
-  return <h2>Roll Die</h2>;
-}
-
-function PlayRound() {
-  return <h2>Round</h2>;
-}
-
-function Leaderboard() {
-  return <h2>Leaderboard</h2>;
 }
