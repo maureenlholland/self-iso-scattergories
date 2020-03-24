@@ -1,6 +1,5 @@
 import React from "react";
 import Intro from "./components/Intro";
-import AddPlayers from "./components/AddPlayers";
 import SetTimer from "./components/SetTimer";
 import RollDie from "./components/RollDie";
 import PlayRound from "./components/PlayRound";
@@ -27,9 +26,6 @@ export default function App() {
           </Route>
           <Route path="/set-timer">
             <SetTimer />
-          </Route>
-          <Route path="/add-players">
-            <AddPlayers />
           </Route>
           <Route path="/">
             <Intro />
