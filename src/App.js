@@ -1,26 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/leaderboard">
+            <Leaderboard />
+          </Route>
+          <Route path="/play-round">
+            <PlayRound />
+          </Route>
+          <Route path="/roll-die">
+            <RollDie />
+          </Route>
+          <Route path="/set-timer">
+            <SetTimer />
+          </Route>
+          <Route path="/add-players">
+            <AddPlayers />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+function Home() {
+  return (
+    <>
+      <h2>Welcome to self-iso scattergories</h2>
+      <p>Instructions coming soon...</p>
+    </>
+  );
+}
+
+function AddPlayers() {
+  return <h2>Add players</h2>;
+}
+
+function SetTimer() {
+  return <h2>Set Timer</h2>;
+}
+
+function RollDie() {
+  return <h2>Roll Die</h2>;
+}
+
+function PlayRound() {
+  return <h2>Round</h2>;
+}
+
+function Leaderboard() {
+  return <h2>Leaderboard</h2>;
+}
