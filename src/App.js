@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 
 export default function App() {
+  // might not need redux at all - use top level state instead
   return (
     <Router>
       <div>
