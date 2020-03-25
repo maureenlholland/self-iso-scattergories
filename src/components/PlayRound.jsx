@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './PlayRound.css';
+import { cards } from '../data/cards';
 
 export default function PlayRound() {
   // alert function: when timer hits zero overlay with notice to put pencils down. button to count scores.
@@ -10,22 +11,20 @@ export default function PlayRound() {
         <div>
           <p>Everybody has pencil and paper? <button>Start Timer</button></p>
           <ol>
-            <li>Musician</li>
-            <li>Athlete</li>
-            <li>Painter</li>
-            <li>Writer</li>
-            <li>Politician</li>
-            <li>Actor/Actress</li>
-            <li>Comedian</li>
-            <li>Someone you know</li>
-            <li>Royal family member</li>
-            <li>Celebrity animal</li>
+            {cards[0].map((category => <li key={category.toLowerCase().replace(' ', '-')}>{category}</li>))}
           </ol>
         </div>
         <div>
           {/* condition: before alert show timer, after show leaderboard */}
           <div>Timer counts down here. Add pause button.</div>
-          <p>When all scores are counted, add them to the <Link to="/leaderboard">Leaderboard</Link></p>
+          <div>
+            <h3>Player Scores</h3>
+            <ul>
+              <li>Name <form><label>Score: <input type="number" /></label><input type="submit" value="Save" /></form></li>
+              <li>Name <form><label>Score: <input type="number" /></label><input type="submit" value="Save" /></form></li>
+            </ul>
+            <Link to="/leaderboard">View Leaderboard</Link>
+          </div>
         </div>
       </>
     );
