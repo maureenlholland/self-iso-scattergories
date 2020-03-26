@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import shuffle from 'shuffle-array';
 import { cards } from './data/cards';
+import './App.css';
 
 export default class App extends Component {
   state = {
@@ -46,38 +47,40 @@ export default class App extends Component {
     const { players, cards, round, seconds, letter } = this.state;
 
     return (
-      <Router>
-        <div>
-          <Switch>
-            <Route path="/leaderboard">
-              <Leaderboard players={players} round={round} />
-            </Route>
-            <Route path="/play-round">
-              <PlayRound
-                letter={letter}
-                round={round}
-                card={cards[round -1]}
-                seconds={seconds}
-                players={players}
-                nextRound={this.nextRound}
-              />
-            </Route>
-            <Route path="/roll-die">
-              <RollDie
-                round={round}
-                letter={letter}
-                setLetter={this.setLetter}
-              />
-            </Route>
-            <Route path="/set-timer">
-              <SetTimer seconds={seconds} setTimer={this.setTimer} />
-            </Route>
-            <Route path="/">
-              <Intro addPlayers={this.addPlayers} />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <div className="wrapper">
+        <Router>
+          <div>
+            <Switch>
+              <Route path="/leaderboard">
+                <Leaderboard players={players} round={round} />
+              </Route>
+              <Route path="/play-round">
+                <PlayRound
+                  letter={letter}
+                  round={round}
+                  card={cards[round -1]}
+                  seconds={seconds}
+                  players={players}
+                  nextRound={this.nextRound}
+                />
+              </Route>
+              <Route path="/roll-die">
+                <RollDie
+                  round={round}
+                  letter={letter}
+                  setLetter={this.setLetter}
+                />
+              </Route>
+              <Route path="/set-timer">
+                <SetTimer seconds={seconds} setTimer={this.setTimer} />
+              </Route>
+              <Route path="/">
+                <Intro addPlayers={this.addPlayers} />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div>
     ); 
   }
 }

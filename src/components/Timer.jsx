@@ -38,13 +38,13 @@ export default class Timer extends Component {
     
     render() {
         return (
-            <>
+            <div className="timer">
+                <p className="fb">Time remaining: <span className={this.state.seconds <= 10 ? 'highlight' : 'fade'}>{this.state.seconds}</span></p>
                 {this.state.timerRunning ?
                     <button onClick={this.pauseCountdown}>Pause Timer</button>
                     : <button onClick={this.startCountdown}>Start Timer</button>
                 }
-                <p>Time remaining: {this.state.seconds}</p>
-            </>
+            </div>
         );
     }
 }

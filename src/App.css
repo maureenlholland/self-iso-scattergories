@@ -1,0 +1,220 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: lightgray;
+    font-family: 'Open Sans', serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    background: cornflowerblue;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    text-transform: capitalize;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+h2, h3 {
+    font-weight: normal;
+}
+
+label,
+input {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+}
+
+label input {
+    min-width: 200px;
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+label:not(.label-input) {
+    display: block;
+    margin-top: 10px;
+}
+
+.label-input input {
+    margin-left: 10px;
+}
+
+input {
+    padding: 5px;
+    border: 2px solid black;
+}
+
+input[type="submit"],
+.play-round button {
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+input[type="submit"]:hover,
+.play-round button:hover,
+input[type="submit"]:focus,
+.play-round button:focus {
+    background: black;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid cornflowerblue;
+}
+
+a:not(.roll-die-link) {
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    background: green;
+}
+
+ul,
+ol {
+    width: 100%;
+    border: 1px solid lightgrey;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.7rem;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    height: calc(100vh - 40px);
+    overflow-y: scroll;
+}
+
+.fb {
+    display: flex;
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+}
+
+.cta input,
+.cta label {
+    margin: 0;
+}
+
+.add-players .cta input[type="text"] {
+    margin-left: 10px;
+}
+
+.add-players form {
+    margin-bottom: 20px;
+}
+
+.cta a {
+    margin-left: 10px;
+}
+
+.add-players,
+.list-players {
+    width: 50%;
+}
+
+.list-players li {
+    text-align: center;
+}
+
+.roll-die a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+}
+
+.die {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    background: cornflowerblue;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    border: none;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.play-round ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+.categories {
+    width: 70%;
+}
+
+.categories button {
+    margin-left: 10px;
+}
+
+.round-scores {
+    width: calc(30% - 50px);
+    margin-left: 50px;
+}
+
+.timer > .fb {
+    align-items: center;
+}
+
+.timer .fade,
+.timer .highlight {
+    font-size: 2rem;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 57px;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    font-weight: bold;
+}
+
+.timer .fade {
+    opacity: 0.2;
+    background: cornflowerblue;
+}
+
+.timer .highlight {
+    opacity: 1;
+    background: red;
+}
+
+.leaderboard-links {
+    display: flex;
+    justify-content: space-between;
+}

@@ -15,12 +15,14 @@ export default class SetTimer extends Component {
       <>
         <h2>Set Timer</h2>
         <form>
-          <label>Countdown time in seconds
+          <label className="label-input">Countdown time in seconds
             <input type="number" value={this.state.seconds} onChange={(e) => this.setState({ seconds: e.target.value })}></input>
           </label>
         </form>
-        <p>You can edit this after each round.</p>
-        <Link to="/roll-die" onClick={() => this.props.setTimer(this.state.seconds)}>Roll Die</Link>
+        <div className="cta">
+          <p>You can edit this after each round.</p>
+          <Link to="/roll-die" onClick={() => this.props.setTimer(this.state.seconds)}>Roll Die</Link>
+        </div>
       </>
     );
   }

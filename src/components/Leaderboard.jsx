@@ -19,10 +19,10 @@ export default function Leaderboard({ players, round }) {
           })}
         </ol>
         {round <= 3 ? (
-          <>
+          <div className="leaderboard-links">
             <Link to="set-timer">Edit timer?</Link>
             <Link to="roll-die">Roll die</Link>
-          </>
+          </div>
         ) : (
           <Link to="/">Start a new game?</Link>
         )}

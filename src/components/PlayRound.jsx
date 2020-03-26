@@ -36,41 +36,42 @@ export default class PlayRound extends Component {
 
   render() {
     return (
-      <>
+      <div className="play-round">
         <audio src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg" ref={this.bell}></audio>
         <h2>Round {this.props.round}: {this.props.letter}</h2>
-        <div>
-          {this.state.playStatus === 'off' && !this.state.alarmSounded && (
-            <p>Everybody has pencil and paper? <button onClick={this.startPlay}>Start Timer</button></p>
-          )}
-          {(this.state.playStatus === 'on' || this.state.alarmSounded) && (
-            <ol>
-              {this.props.card.map((category => <li key={category.toLowerCase().replace(' ', '-')}>{category}</li>))}
-            </ol>
-          )}
+        <div className="fb">
+          <div className="categories">
+            {this.state.playStatus === 'off' && !this.state.alarmSounded && (
+              <p>Everybody has pencil and paper? <button onClick={this.startPlay}>Start Timer</button></p>
+            )}
+            {(this.state.playStatus === 'on' || this.state.alarmSounded) && (
+              <ol>
+                {this.props.card.map((category => <li key={category.toLowerCase().replace(' ', '-')}>{category}</li>))}
+              </ol>
+            )}
+          </div>
+          <div className="round-scores">
+            {this.state.playStatus === 'on' && <Timer seconds={this.props.seconds} soundAlarm={this.endPlay} />}
+            {this.state.alarmSounded && (
+              <div>
+                <ul>
+                  {this.props.players.map(player => {
+                    return (
+                      <li key={player.name.toLowerCase().replace(' ', '-')}>
+                        {player.name}
+                        <form>
+                          <label>Score: <input value={this.state.value} name={player.name} onChange={this.setScore} type="number" /></label>
+                        </form>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <Link to="/leaderboard" onClick={() => this.props.nextRound(this.state.scores)}>View Leaderboard</Link>
+              </div>
+            )}
+          </div>
         </div>
-        <div>
-          {this.state.playStatus === 'on' && <Timer seconds={this.props.seconds} soundAlarm={this.endPlay} />}
-          {this.state.alarmSounded && (
-            <div>
-              <h3>Player Scores</h3>
-              <ul>
-                {this.props.players.map(player => {
-                  return (
-                    <li key={player.name.toLowerCase().replace(' ', '-')}>
-                      {player.name}
-                      <form>
-                        <label>Score: <input value={this.state.value} name={player.name} onChange={this.setScore} type="number" /></label>
-                      </form>
-                    </li>
-                  );
-                })}
-              </ul>
-              <Link to="/leaderboard" onClick={() => this.props.nextRound(this.state.scores)}>View Leaderboard</Link>
-            </div>
-          )}
-        </div>
-      </>
+      </div>
     );
   }
 }

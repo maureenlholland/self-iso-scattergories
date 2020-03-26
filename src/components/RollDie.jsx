@@ -14,13 +14,12 @@ export default class RollDie extends Component {
 
   render() {
     return (
-      <>
-        <h2>Roll Die</h2>
-        <button onClick={this.rollDie}>Roll me</button>
+      <div className="roll-die">
+        <button className="die" onClick={this.rollDie}>Roll me</button>
         {this.state.letter && (
-          <p><Link to="/play-round" onClick={() => this.props.setLetter(this.state.letter)}>Start Round {this.props.round} with letter {this.state.letter}</Link> or roll again.</p>
+          <p><Link className="roll-die-link" to="/play-round" onClick={() => this.props.setLetter(this.state.letter)}>Start Round {this.props.round} with letter <span className="letter">{this.state.letter}</span></Link> or roll again.</p>
         )}
-      </>
+      </div>
     );
   }
 }

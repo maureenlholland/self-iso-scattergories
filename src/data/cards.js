@@ -1,5 +1,5 @@
 const people = [
-    'Musician',
+    'Musician / Band',
     'Athlete',
     'Painter',
     'Writer',
@@ -34,7 +34,7 @@ const things = [
     'Car',
     'Pizza topping',
     'Smoothie ingredient',
-    'Something fancy'
+    'Precious stone / jewellery'
 ];
 
 export const cards = [people, places, things];
