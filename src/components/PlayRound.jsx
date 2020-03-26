@@ -4,10 +4,14 @@ import './PlayRound.css';
 import Timer from './Timer';
 
 export default class PlayRound extends Component {
-  state = {
-    playStatus: 'off',
-    alarmSounded: false,
-    scores: {},
+  constructor(props) {
+    super(props);
+    this.bell = React.createRef();
+    this.state = {
+      playStatus: 'off',
+      alarmSounded: false,
+      scores: {},
+    }
   }
 
   startPlay = () => {
@@ -15,8 +19,12 @@ export default class PlayRound extends Component {
   }
 
   endPlay = () => {
+    window.addEventListener('close', (event) => {
+      console.log('close event triggered')
+    });
+    this.bell.current.play()
     alert('Pencils down!!!');
-    this.setState({ playStatus: 'off', alarmSounded: true });
+    this.setState({ playStatus: 'off', alarmSounded: true }, () => this.bell.current.pause());
   }
 
   setScore = (e) => {
@@ -29,6 +37,7 @@ export default class PlayRound extends Component {
   render() {
     return (
       <>
+        <audio src="https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg" ref={this.bell}></audio>
         <h2>Round {this.props.round}: {this.props.letter}</h2>
         <div>
           {this.state.playStatus === 'off' && !this.state.alarmSounded && (
