@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import './RollDie.css';
 import { die } from '../data/die';
 
-// on play round click save letter in redux
-
 export default class RollDie extends Component {
   state = {
     letter: ''
@@ -19,7 +17,9 @@ export default class RollDie extends Component {
       <>
         <h2>Roll Die</h2>
         <button onClick={this.rollDie}>Roll me</button>
-        {this.state.letter && <p><Link to="/play-round">Start Round 1 with letter {this.state.letter}</Link> or roll again.</p>}
+        {this.state.letter && (
+          <p><Link to="/play-round" onClick={() => this.props.setLetter(this.state.letter)}>Start Round {this.props.round} with letter {this.state.letter}</Link> or roll again.</p>
+        )}
       </>
     );
   }

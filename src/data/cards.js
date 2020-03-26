@@ -34,6 +34,7 @@ const things = [
     'Car',
     'Pizza topping',
     'Smoothie ingredient',
+    'Something fancy'
 ];
 
 export const cards = [people, places, things];
