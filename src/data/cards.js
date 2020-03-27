@@ -5,7 +5,7 @@ const people = [
     'Writer',
     'Politician',
     'Actor/Actress',
-    'Comedian',
+    'Comedian or Physicist',
     'Someone Royal',
     'Cartoon character',
     'Nickname',
@@ -73,7 +73,33 @@ const C = [
     'Scary thing',
     'Shiny thing',
     'Thing you should not eat',
-    'Tree or Flower'
+    'Woodland creature'
+];
+
+const D = [
+    'Book Title',
+    'Movie Title',
+    'Song Title',
+    'Flower',
+    'Food',
+    'Drinks',
+    'Thing at a Zoo',
+    'Thing at a Farm',
+    'Thing at a Circus',
+    'Things in the Wild West'
+];
+
+const E = [
+    "A person's name",
+    'Sport-related word',
+    'Math-related word',
+    'Science-related word',
+    'Occupation',
+    'Hobby',
+    'Word ending in -LY',
+    'Word with Double Letters',
+    'Item in Refrigerator',
+    'Item in a Car'
 ];
 
 export const cards = [
@@ -82,5 +108,7 @@ export const cards = [
     things,
     A,
     B,
-    C
+    C,
+    D,
+    E
 ];
