@@ -6,9 +6,9 @@ const people = [
     'Politician',
     'Actor/Actress',
     'Comedian',
-    'Royal family member',
-    'Disney character',
-    'Someone you know from Belleville',
+    'Someone Royal',
+    'Cartoon character',
+    'Nickname',
 ];
 
 const places = [
@@ -34,7 +34,53 @@ const things = [
     'Car',
     'Pizza topping',
     'Smoothie ingredient',
-    'Something fancy'
+    'Precious stone / type of jewellery'
 ];
 
-export const cards = [people, places, things];
+const A = [
+    'Flavour of Ice Cream',
+    'Song Title',
+    'Item found in grocery store',
+    'Fictional Character',
+    'Something that smells bad',
+    'Something that smells good',
+    'A word you shout',
+    'A word you whisper',
+    'Words that Rhyme',
+    'Superhero Name (can be made up but should be convincing)'
+];
+
+const B = [
+    'Appears in groups',
+    'Found in forest',
+    'Something you hide',
+    'Something stolen',
+    'Something fancy',
+    'Thing',
+    'Inanimate object you wish could talk',
+    'Soft and squishy',
+    'Item in this room',
+    'One-syllable word'
+];
+
+const C = [
+    'Famous historical event',
+    'Dessert',
+    'Desert',
+    'Thing that makes noise',
+    'Smelly thing',
+    'Thing that lives underwater',
+    'Scary thing',
+    'Shiny thing',
+    'Thing you should not eat',
+    'Tree or Flower'
+];
+
+export const cards = [
+    people,
+    places,
+    things,
+    A,
+    B,
+    C
+];
